@@ -5,13 +5,17 @@ layout: post-index
 <!-- ================= Introduction Section ================= -->
 <section class="home-intro">
     <h1>Hi, I’m Elodie Tran! 👋</h1>
-    <p>Welcome to my blog! Here I share my journey, projects, and thoughts.</p>
+    <p>Business Analytics & IT student | Aspiring Business Analyst</p>
+    <p>Welcome to my blog! Here I share my projects, insights, and experiences in data, technology, and business.</p>
+    
     <p>A bit about me:</p>
     <ul>
-        <li>I love exploring new technologies</li>
-        <li>I enjoy writing about my experiences</li>
-        <li>This blog is my space to reflect and share</li>
+        <li>Passionate about turning data into actionable insights</li>
+        <li>Enjoy analyzing problems and building practical solutions</li>
+        <li>This blog is my space to reflect and share my work</li>
     </ul>
+    
+    <p>Check out my featured work below or explore my posts in the archive!</p>
 </section>
 
 <hr>
@@ -21,18 +25,22 @@ layout: post-index
 <article>
     
     <!-- POST FEATURED IMAGE -->
+    {% if post.featured-image %}
     <div class="featured-image">
-        <img src="{{ post.featured-image}}" style="width:100%">
+        <img src="{{ post.featured-image }}" style="width:100%">
     </div>
+    {% endif %}
 
     <!-- POST TITLE -->
     <header>
         <h1 class="entry-title">
             <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
         </h1>
+        {% if post.subtitle %}
         <h3 class="entry-subtitle">
             <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.subtitle }}</a>
         </h3>
+        {% endif %}
     </header>
 
     <!-- POST CONTENT -->
@@ -43,15 +51,16 @@ layout: post-index
     <hr>
     
     <!-- POST TAGS -->
+    {% if post.tags %}
     <div class="inline-tags">
         <span>
         {% for tag in post.tags %}
-            <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#{{ tag }}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
         {% endfor %}
         </span>
     </div>
-    
     <br>
+    {% endif %}
     
     <!-- POST DATE -->
     <div class="post-date">
@@ -70,3 +79,4 @@ layout: post-index
 {% include pagination.html %}
 </center>
 </div>
+
