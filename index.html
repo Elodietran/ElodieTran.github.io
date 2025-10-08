@@ -1,12 +1,28 @@
 ---
 layout: post-index
 ---
+
+<!-- ================= Introduction Section ================= -->
+<section class="home-intro">
+    <h1>Hi, I’m Elodie Tran! 👋</h1>
+    <p>Welcome to my blog! Here I share my journey, projects, and thoughts.</p>
+    <p>A bit about me:</p>
+    <ul>
+        <li>I love exploring new technologies</li>
+        <li>I enjoy writing about my experiences</li>
+        <li>This blog is my space to reflect and share</li>
+    </ul>
+</section>
+
+<hr>
+
+<!-- ================= Blog Posts Section ================= -->
 {% for post in paginator.posts %}
 <article>
     
     <!-- POST FEATURED IMAGE -->
     <div class="featured-image">
-    <img src="{{ post.featured-image}}" style="width:100%">
+        <img src="{{ post.featured-image}}" style="width:100%">
     </div>
 
     <!-- POST TITLE -->
@@ -20,11 +36,10 @@ layout: post-index
     </header>
 
     <!-- POST CONTENT -->
-<!--     <div class="entry-content">
+    <!-- <div class="entry-content">
         {{ post.content }}
     </div> -->
     
-    <!--- DIVIDING LINE -->
     <hr>
     
     <!-- POST TAGS -->
@@ -54,4 +69,4 @@ layout: post-index
 <center>
 {% include pagination.html %}
 </center>
-    </div>
+</div>
