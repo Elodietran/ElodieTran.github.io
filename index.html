@@ -1,30 +1,25 @@
 
 ---
 layout: post-index
+title: "Elodie Tran | Data Analytics Portfolio"
 ---
-<section class="projects">
+
+<div class="projects-page">
   <h2>Projects &amp; Insights</h2>
-  <p>Explore my projects, analyses and articles about data, technology and business problem-solving.</p>
 
-  {% for post in site.posts %}
-  <article class="project-card">
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+  <p>
+    Explore my projects, analyses and articles about data,
+    technology and business problem-solving.
+  </p>
 
-    {% if post.subtitle %}
-    <p>{{ post.subtitle | escape }}</p>
-    {% endif %}
+  <h3>Coming soon</h3>
+  <p>
+    I'm building a portfolio of projects in data analytics,
+    business analysis and finance.
+  </p>
 
-    <p class="project-date">{{ post.date | date: "%B %d, %Y" }}</p>
-
-    {% if post.description %}
-    <p>{{ post.description | escape | truncate: 220 }}</p>
-    {% elsif post.excerpt %}
-    <p>{{ post.excerpt | strip_html | truncate: 220 }}</p>
-    {% else %}
-    <p>Read about this project, analysis or topic.</p>
-    {% endif %}
-
-    <p><a href="{{ post.url | relative_url }}">Read more →</a></p>
-  </article>
-  {% endfor %}
-</section>
+  <p>
+    My work explores SQL, Python, Power BI, Excel and
+    data-driven business decisions.
+  </p>
+</div>
