@@ -1,13 +1,22 @@
-title:            Elodie Tran Blog
-description:      Your site description...
-copyright:        Your Name
-url: # add your custom site url (format: https://example.com)
 
+title: "Elodie Tran | Data Analytics Portfolio"
+description: "Business Analytics and IT portfolio showcasing data analysis, business projects, finance, and technology."
+author: "Elodie Tran"
+copyright: "Elodie Tran"
 
-future:      false  # publish future dated posts --  true, false (default)
+url: "https://elodietran.github.io"
+baseurl: ""
+
+future: false
+
 highlighter: rouge
-markdown:    kramdown
-gems:
+markdown: kramdown
+
+# Enable Liquid processing in Markdown files.
+# HTML files are processed by Jekyll by default.
+render_with_liquid: true
+
+plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-gist
@@ -19,20 +28,14 @@ sass:
 
 permalink: /:categories/:year-:month-:day/:title.html
 
-# Amount of post to show on home page
+# Number of posts displayed on the homepage
 paginate: 5
 
-#kramdown:
-#  input: GFM
-#  auto_ids: true
-#  footnote_nr: 1
-#  entity_output: as_char
-#  toc_levels: 1..6
-#  enable_coderay: false
-
+# Include additional files
 include:
   - .htaccess
 
+# Exclude development files from the generated website
 exclude:
   - "*.less"
   - "*.sublime-project"
