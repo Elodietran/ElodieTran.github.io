@@ -1,82 +1,349 @@
+
 ---
 layout: post-index
 ---
 
-<!-- ================= Introduction Section ================= -->
-<section class="home-intro">
-    <h1>Hi, I’m Elodie Tran! 👋</h1>
-    <p>Business Analytics & IT student | Aspiring Business Analyst</p>
-    <p>Welcome to my blog! Here I share my projects, insights, and experiences in data, technology, and business.</p>
-    
-    <p>A bit about me:</p>
-    <ul>
-        <li>Passionate about turning data into actionable insights</li>
-        <li>Enjoy analyzing problems and building practical solutions</li>
-        <li>This blog is my space to reflect and share my work</li>
-    </ul>
-    
-    <p>Check out my featured work below or explore my posts in the archive!</p>
-</section>
+<style>
+  .portfolio-home {
+    max-width: 1100px;
+    margin: 0 auto;
+    color: #243247;
+  }
 
-<hr>
+  .portfolio-hero {
+    padding: 48px 32px;
+    margin-bottom: 32px;
+    background: #f1f5f9;
+    border-left: 4px solid #526b9a;
+    border-radius: 8px;
+  }
 
-<!-- ================= Blog Posts Section ================= -->
-{% for post in paginator.posts %}
-<article>
-    
-    <!-- POST FEATURED IMAGE -->
-    {% if post.featured-image %}
-    <div class="featured-image">
-        <img src="{{ post.featured-image }}" style="width:100%">
+  .portfolio-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 12px;
+    color: #17243a;
+  }
+
+  .portfolio-hero .role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #526b9a;
+    margin-bottom: 16px;
+  }
+
+  .portfolio-hero p {
+    max-width: 700px;
+    line-height: 1.8;
+  }
+
+  .portfolio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .portfolio-links a {
+    display: inline-block;
+    padding: 10px 17px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    background: #263b5b;
+    color: white;
+  }
+
+  .portfolio-links a.secondary {
+    background: white;
+    color: #263b5b;
+    border: 1px solid #cbd5e1;
+  }
+
+  .portfolio-section {
+    margin: 36px 0;
+  }
+
+  .portfolio-section h2 {
+    color: #17243a;
+    margin-bottom: 10px;
+  }
+
+  .portfolio-muted {
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .portfolio-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .portfolio-skills span {
+    background: #eef2f7;
+    border: 1px solid #dce4ef;
+    color: #344967;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+
+  .portfolio-post {
+    margin: 24px 0;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio-post h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .portfolio-post h3 a {
+    color: #243b60;
+    text-decoration: none;
+  }
+
+  .portfolio-post h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .portfolio-post .post-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 12px 0;
+  }
+
+  .portfolio-post .featured-image {
+    margin-bottom: 20px;
+  }
+
+  .portfolio-post .featured-image img {
+    display: block;
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .portfolio-post .post-excerpt {
+    line-height: 1.7;
+  }
+
+  .portfolio-post .inline-tags {
+    margin-top: 14px;
+  }
+
+  .portfolio-post .inline-tags a {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    color: #526b9a;
+    font-size: 0.85rem;
+  }
+
+  .portfolio-about {
+    padding: 24px;
+    background: #f8fafc;
+    border-radius: 8px;
+    line-height: 1.8;
+  }
+
+  .portfolio-about a {
+    color: #405c8a;
+  }
+
+  @media (max-width: 600px) {
+    .portfolio-hero {
+      padding: 28px 20px;
+    }
+
+    .portfolio-post {
+      padding: 18px;
+    }
+
+    .portfolio-links a {
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="portfolio-home">
+
+  <!-- INTRODUCTION -->
+  <section class="portfolio-hero">
+    <h1>Hi, I'm Elodie Tran.</h1>
+
+    <p class="role">
+      Business Analytics &amp; IT | Data, Finance &amp; Business
+    </p>
+
+    <p>
+      I'm a Bachelor of Business student at UTS, majoring in
+      Business Analytics and Information Technology. I'm interested
+      in using data to understand business performance, solve problems
+      and support better decisions.
+    </p>
+
+    <p>
+      This portfolio brings together my projects, technical skills
+      and practical learning as I develop my career in analytics
+      and business.
+    </p>
+
+    <div class="portfolio-links">
+      <a href="{{ '/archives/' | relative_url }}">Explore My Work</a>
+      <a class="secondary"
+         href="https://github.com/Elodietran"
+         target="_blank"
+         rel="noopener noreferrer">GitHub Profile</a>
+      <!-- Replace the URL below with your LinkedIn profile -->
+      <a class="secondary"
+         href="https://www.linkedin.com/"
+         target="_blank"
+         rel="noopener noreferrer">LinkedIn</a>
     </div>
-    {% endif %}
+  </section>
 
-    <!-- POST TITLE -->
-    <header>
-        <h1 class="entry-title">
-            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
-        </h1>
-        {% if post.subtitle %}
-        <h3 class="entry-subtitle">
-            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.subtitle }}</a>
+  <!-- TECHNICAL SKILLS -->
+  <section class="portfolio-section">
+    <h2>Skills &amp; Tools</h2>
+
+    <p class="portfolio-muted">
+      Tools and technologies I use and continue to develop through
+      university coursework and practical projects.
+    </p>
+
+    <div class="portfolio-skills">
+      <span>SQL</span>
+      <span>Python</span>
+      <span>pandas</span>
+      <span>Power BI</span>
+      <span>Excel</span>
+      <span>Tableau</span>
+      <span>KNIME</span>
+      <span>Data Visualisation</span>
+      <span>Business Analysis</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS AND ARTICLES -->
+  <section class="portfolio-section">
+    <h2>Projects &amp; Insights</h2>
+
+    <p class="portfolio-muted">
+      A collection of projects, analyses and articles exploring
+      data, technology and business problem-solving.
+    </p>
+
+    {% for post in paginator.posts %}
+    <article class="portfolio-post">
+
+      {% if post.featured-image %}
+      <div class="featured-image">
+        <a href="{{ post.url | relative_url }}">
+          <img
+            src="{{ post.featured-image | relative_url }}"
+            alt="{{ post.title | escape }}"
+            loading="lazy">
+        </a>
+      </div>
+      {% endif %}
+
+      <header>
+        <h3>
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title }}
+          </a>
         </h3>
+
+        {% if post.subtitle %}
+        <p class="portfolio-muted">
+          {{ post.subtitle }}
+        </p>
         {% endif %}
-    </header>
+      </header>
 
-    <!-- POST CONTENT -->
-    <!-- <div class="entry-content">
-        {{ post.content }}
-    </div> -->
-    
-    <hr>
-    
-    <!-- POST TAGS -->
-    {% if post.tags %}
-    <div class="inline-tags">
-        <span>
+      <p class="post-meta">
+        {{ post.date | date: "%B %d, %Y" }}
+        {% if post.categories %}
+          &nbsp; | &nbsp;
+          {{ post.categories | join: ", " }}
+        {% endif %}
+      </p>
+
+      <div class="post-excerpt">
+        {% if post.description %}
+          {{ post.description | markdownify | strip_html | truncate: 220 }}
+        {% elsif post.excerpt %}
+          {{ post.excerpt | strip_html | truncate: 220 }}
+        {% else %}
+          Read this post to explore the project, analysis or insights.
+        {% endif %}
+      </div>
+
+      {% if post.tags %}
+      <div class="inline-tags">
         {% for tag in post.tags %}
-            <a href="/tags/#{{ tag }}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+          <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">
+            #{{ tag }}
+          </a>
         {% endfor %}
-        </span>
-    </div>
-    <br>
-    {% endif %}
-    
-    <!-- POST DATE -->
-    <div class="post-date">
-        <span class="entry-date date published updated">
-            <time datetime="{{ post.date | date_to_xmlschema }}">
-                <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
-            </time>
-        </span>
-    </div>
-    
-</article>
-{% endfor %}
+      </div>
+      {% endif %}
 
-<div class="pagination">
-<center>
-{% include pagination.html %}
-</center>
+      <p>
+        <a href="{{ post.url | relative_url }}">
+          Read more &rarr;
+        </a>
+      </p>
+
+    </article>
+    {% endfor %}
+
+    {% if paginator.posts.size == 0 %}
+    <p class="portfolio-muted">
+      My portfolio is taking shape. New projects and analyses
+      will be published here soon.
+    </p>
+    {% endif %}
+
+    <!-- PAGINATION -->
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% include pagination.html %}
+    </div>
+    {% endif %}
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="portfolio-section portfolio-about">
+    <h2>About Me</h2>
+
+    <p>
+      I'm studying Business Analytics and Information Technology
+      at the University of Technology Sydney. I enjoy combining
+      analytical thinking with an understanding of business to
+      turn information into useful insights.
+    </p>
+
+    <p>
+      I'm continuing to build my experience through technical
+      projects, data analysis and practical problem-solving.
+      I'm particularly interested in opportunities where I can
+      contribute to business reporting, financial analysis and
+      data-driven decision-making.
+    </p>
+
+    <p>
+      <a href="{{ '/about/' | relative_url }}">Learn more about me &rarr;</a>
+    </p>
+  </section>
+
 </div>
+
 
